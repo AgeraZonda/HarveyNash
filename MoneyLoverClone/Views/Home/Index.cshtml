@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+    string[] month = {"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC" };
+    int year = 2012;
+    int currentmonth = 1;
+}
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <br />
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    @Html.ActionLink(month[currentmonth-1] ,"Change",  "Home" , new { id=currentmonth-1 },null )
+                </li>
+
+                <li class="nav-item">
+                    <a href="#profile" class="middlebtn nav-link active" style="color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;" role="tab" data-toggle="tab">@month[currentmonth]</a>
+                </li>
+
+                <li class="nav-item">
+                    @Html.ActionLink(month[currentmonth+1], "Change", "Home", new { id = currentmonth+1 }, null)
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="home">1</div>
+                <div role="tabpanel" class="tab-pane fade" id="profile">2</div>
+                <div role="tabpanel" class="tab-pane fade" id="about">3</div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

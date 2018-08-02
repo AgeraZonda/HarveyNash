@@ -1,0 +1,50 @@
+﻿@model System.Int32
+@{
+    var a = Model;
+    var b = Model - 1;
+    var c = Model + 1;
+    ViewBag.Title = "Change";
+    string[] month = { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
+    if (Model == 0) {
+        b = 11;
+    }
+    if (Model == 11) {
+        c = 0;
+    }
+}
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <br />
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    @Html.ActionLink(month[b], "Change", "Home", new { id = b }, null)
+                </li>
+
+                <li class="nav-item">
+                    <a href="#profile" class="middlebtn nav-link active" style="color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;" role="tab" data-toggle="tab">@month[a]</a>
+                </li>
+
+                <li class="nav-item">
+                    @Html.ActionLink(month[c], "Change", "Home", new { id = c }, null)
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="home">1</div>
+                <div role="tabpanel" class="tab-pane fade" id="profile">2</div>
+                <div role="tabpanel" class="tab-pane fade" id="about">3</div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
